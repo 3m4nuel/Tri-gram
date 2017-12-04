@@ -17,7 +17,6 @@
  * A, B, or C only.
  */
 
-#include "stdafx.h"
 #include <fstream>
 #include <iostream>
 #include <map>
@@ -30,8 +29,8 @@ using namespace std;
 int main()
 {
 	/* A probabilities file is opened and loaded into a map data structure *
-	 * of the following key/value structure:							   *
-	 * key = character|sequence											   *
+	 * of the following key/value structure:                               *
+	 * key = character|sequence					       *
 	 * value = probability                                                 */
 	ifstream inputStream;
 	map<string, long double> probabilities;
