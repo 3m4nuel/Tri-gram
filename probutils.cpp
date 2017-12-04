@@ -6,22 +6,19 @@
 * This files provides the functions used for the main program.
 */
 
-#include "stdafx.h"
-
 #include <cstdlib>
 #include <ctype.h>
 #include <fstream>
 #include <iostream>
 #include <map>
-#include <regex>
 #include <sstream>
 
 
 /* Below contains contants and a method to open up the file containing the probabilities values *
- * for each character and sequence relationship.											    */
+ * for each character and sequence relationship.                                                */
 using namespace std;
 
-const char *filePath = "C:\\Users\\emman\\Box Sync\\classes\\Fall2017\\CS571\\homework\\hw8.1\\nlpProb.txt";
+const char *filePath = "nlpProb.txt";
 
 void openProbabilitiesFile(std::ifstream &inputStream)
 {
@@ -34,25 +31,29 @@ void openProbabilitiesFile(std::ifstream &inputStream)
 	}
 }
 
-/* Below contains the conastants and methods to parse the character, sequence and probabilities *
- * from the probabilities file, nlpProb.txt														*/
+/* Below contains the constants and methods to parse the character, sequence and probabilities *
+ * from the probabilities file, nlpProb.txt						        */
 const int BUFF = 256;
-const string PROB_MATCH_PATTERN = "(P\\()(\\w{1})(\\s\\|\\s)(.*?)(\\)\\s=\\s)(0.\\d{2})";
-const int CHAR_MATCH_GROUP = 2;
-const int SEQ_MATCH_GROUP = 4;
-const int PROB_MATCH_GROUP = 6;
 
 void loadProbabilities(ifstream &inputStream, map<string, long double> &probabilities)
 {
+	/* Each line in the probabilities file is parsed below. This is done by first   *
+	 * based on the expected position of a character. After, positions of expected  *
+         * characters in the probabilities files are used to obtain the substring that  *
+         * represents the sequence and probability values.                              */
 	char line[BUFF];
-	regex pattern(PROB_MATCH_PATTERN);
-	cmatch match;
+	string character;
+	string sequence;
+	string probability;
 
-	/* Each line in the probabilities file is parsed using regular expression. *
-	 * After it is inserted in a map data structure                            */
-	while (inputStream.getline(line, BUFF))
-		if (regex_search(line, match, pattern) && match.size() > 1)
-			probabilities.insert(pair<string, long double>(match.str(CHAR_MATCH_GROUP) + "|" + match.str(SEQ_MATCH_GROUP), strtold(match.str(PROB_MATCH_GROUP).c_str(), nullptr)));
+	/* Each line of the file is loop through, extracting the character, sequence and probability */
+	while(inputStream.getline(line, BUFF))
+	{
+		character = line[2];
+		sequence = string(line).substr(6, string(line).find(")") - 6);
+		probability = string(line).substr(string(line).find("0."), sizeof(line));
+		probabilities.insert(pair<string, long double>(character + "|" + sequence, strtold(probability.c_str(), nullptr)));
+	}	
 
 	/* Probabilities are displayed after probabilities file is parsed and set into a map data structure. */
 	map<string, long double>::iterator it;

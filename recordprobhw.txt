@@ -1,0 +1,197 @@
+Script started on Sun 03 Dec 2017 05:39:51 PM PST
+]0;casti107@empress:~/CS571/HW8.1/Tri-gram[casti107@empress Tri-gram]$ ./nlp[K
+Loading Probabilities....
+
+P(A|AA) = 0.14
+P(A|AB) = 0.15
+P(A|AC) = 0.33
+P(A|BA) = 0.51
+P(A|BB) = 0.21
+P(A|BC) = 0.19
+P(A|CA) = 0.33
+P(A|CB) = 0.22
+P(A|CC) = 0.57
+P(A|nothing before) = 0.12
+P(A|only A before) = 0.13
+P(A|only B before) = 0.2
+P(A|only C before) = 0.31
+P(B|AA) = 0.43
+P(B|AB) = 0.11
+P(B|AC) = 0.12
+P(B|BA) = 0.12
+P(B|BB) = 0.14
+P(B|BC) = 0.05
+P(B|CA) = 0.1
+P(B|CB) = 0.01
+P(B|CC) = 0.04
+P(B|nothing before) = 0.22
+P(B|only A before) = 0.21
+P(B|only B before) = 0.78
+P(B|only C before) = 0.12
+P(C|AA) = 0.12
+P(C|AB) = 0.6
+P(C|AC) = 0.33
+P(C|BA) = 0.22
+P(C|BB) = 0.1
+P(C|BC) = 0.44
+P(C|CA) = 0.13
+P(C|CB) = 0.04
+P(C|CC) = 0.02
+P(C|nothing before) = 0.12
+P(C|only A before) = 0.22
+P(C|only B before) = 0.07
+P(C|only C before) = 0.11
+
+Please enter a string consisting of A, B, or C only: ancbca
+
+P("ABCA") = P("A|nothing before") * P("B|only A before") * P("C|AB") * P("A|BC");
+
+Probability of abca is 0.0028728
+]0;casti107@empress:~/CS571/HW8.1/Tri-gram[casti107@empress Tri-gram]$ ./nl[1Pex./nlp
+Loading Probabilities....
+
+P(A|AA) = 0.14
+P(A|AB) = 0.15
+P(A|AC) = 0.33
+P(A|BA) = 0.51
+P(A|BB) = 0.21
+P(A|BC) = 0.19
+P(A|CA) = 0.33
+P(A|CB) = 0.22
+P(A|CC) = 0.57
+P(A|nothing before) = 0.12
+P(A|only A before) = 0.13
+P(A|only B before) = 0.2
+P(A|only C before) = 0.31
+P(B|AA) = 0.43
+P(B|AB) = 0.11
+P(B|AC) = 0.12
+P(B|BA) = 0.12
+P(B|BB) = 0.14
+P(B|BC) = 0.05
+P(B|CA) = 0.1
+P(B|CB) = 0.01
+P(B|CC) = 0.04
+P(B|nothing before) = 0.22
+P(B|only A before) = 0.21
+P(B|only B before) = 0.78
+P(B|only C before) = 0.12
+P(C|AA) = 0.12
+P(C|AB) = 0.6
+P(C|AC) = 0.33
+P(C|BA) = 0.22
+P(C|BB) = 0.1
+P(C|BC) = 0.44
+P(C|CA) = 0.13
+P(C|CB) = 0.04
+P(C|CC) = 0.02
+P(C|nothing before) = 0.12
+P(C|only A before) = 0.22
+P(C|only B before) = 0.07
+P(C|only C before) = 0.11
+
+Please enter a string consisting of A, B, or C only: abbca
+
+P("ABBCA") = P("A|nothing before") * P("B|only A before") * P("B|AB") * P("C|BB") * P("A|BC");
+
+Probability of abbca is 5.2668e-05
+]0;casti107@empress:~/CS571/HW8.1/Tri-gram[casti107@empress Tri-gram]$ ./nlp
+Loading Probabilities....
+
+P(A|AA) = 0.14
+P(A|AB) = 0.15
+P(A|AC) = 0.33
+P(A|BA) = 0.51
+P(A|BB) = 0.21
+P(A|BC) = 0.19
+P(A|CA) = 0.33
+P(A|CB) = 0.22
+P(A|CC) = 0.57
+P(A|nothing before) = 0.12
+P(A|only A before) = 0.13
+P(A|only B before) = 0.2
+P(A|only C before) = 0.31
+P(B|AA) = 0.43
+P(B|AB) = 0.11
+P(B|AC) = 0.12
+P(B|BA) = 0.12
+P(B|BB) = 0.14
+P(B|BC) = 0.05
+P(B|CA) = 0.1
+P(B|CB) = 0.01
+P(B|CC) = 0.04
+P(B|nothing before) = 0.22
+P(B|only A before) = 0.21
+P(B|only B before) = 0.78
+P(B|only C before) = 0.12
+P(C|AA) = 0.12
+P(C|AB) = 0.6
+P(C|AC) = 0.33
+P(C|BA) = 0.22
+P(C|BB) = 0.1
+P(C|BC) = 0.44
+P(C|CA) = 0.13
+P(C|CB) = 0.04
+P(C|CC) = 0.02
+P(C|nothing before) = 0.12
+P(C|only A before) = 0.22
+P(C|only B before) = 0.07
+P(C|only C before) = 0.11
+
+Please enter a string consisting of A, B, or C only: baac
+
+P("BAAC") = P("B|nothing before") * P("A|only B before") * P("A|BA") * P("C|AA");
+
+Probability of baac is 0.0026928
+]0;casti107@empress:~/CS571/HW8.1/Tri-gram[casti107@empress Tri-gram]$ ./nlp
+Loading Probabilities....
+
+P(A|AA) = 0.14
+P(A|AB) = 0.15
+P(A|AC) = 0.33
+P(A|BA) = 0.51
+P(A|BB) = 0.21
+P(A|BC) = 0.19
+P(A|CA) = 0.33
+P(A|CB) = 0.22
+P(A|CC) = 0.57
+P(A|nothing before) = 0.12
+P(A|only A before) = 0.13
+P(A|only B before) = 0.2
+P(A|only C before) = 0.31
+P(B|AA) = 0.43
+P(B|AB) = 0.11
+P(B|AC) = 0.12
+P(B|BA) = 0.12
+P(B|BB) = 0.14
+P(B|BC) = 0.05
+P(B|CA) = 0.1
+P(B|CB) = 0.01
+P(B|CC) = 0.04
+P(B|nothing before) = 0.22
+P(B|only A before) = 0.21
+P(B|only B before) = 0.78
+P(B|only C before) = 0.12
+P(C|AA) = 0.12
+P(C|AB) = 0.6
+P(C|AC) = 0.33
+P(C|BA) = 0.22
+P(C|BB) = 0.1
+P(C|BC) = 0.44
+P(C|CA) = 0.13
+P(C|CB) = 0.04
+P(C|CC) = 0.02
+P(C|nothing before) = 0.12
+P(C|only A before) = 0.22
+P(C|only B before) = 0.07
+P(C|only C before) = 0.11
+
+Please enter a string consisting of A, B, or C only: cab
+
+P("CAB") = P("C|nothing before") * P("A|only C before") * P("B|CA");
+
+Probability of cab is 0.00372
+]0;casti107@empress:~/CS571/HW8.1/Tri-gram[casti107@empress Tri-gram]$ exit
+exit
+
+Script done on Sun 03 Dec 2017 05:40:35 PM PST
